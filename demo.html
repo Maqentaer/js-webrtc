@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<video id="video" autoplay></video>
+		<script>
+         navigator.getUserMedia({
+            audio: true,
+            video: true
+         }, function(stream) {
+            var videoElement = document.getElementById('video');
+            videoElement.src = URL.createObjectURL(stream);
+         }, function(err) {
+            console.log(err);
+         });
+		</script>
+	</body>
+</html>
