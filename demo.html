@@ -12,7 +12,8 @@
 	<body>
 		<video id="video" autoplay></video>
 		<script>
-         navigator.getUserMedia({
+         var getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+         getUserMedia.call(navigator, {
             audio: true,
             video: true
          }, function(stream) {
