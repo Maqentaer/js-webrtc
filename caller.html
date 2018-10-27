@@ -50,12 +50,12 @@
             video: true
          }, function(stream) {
             var videoElement = document.getElementById('video');
-            videoElement.src = URL.createObjectURL(stream);
+            videoElement.srcObject = stream;
             
             var call = peer.call('maqentaer-js-webrtc-receiver', stream);
             call.on('stream', function(remoteStream) {
                var videoElement = document.getElementById('incomeVideo');
-               videoElement.src = URL.createObjectURL(remoteStream);
+               videoElement.srcObject = remoteStream;
             });
          }, function(err) {
             console.log(err);

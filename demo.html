@@ -38,7 +38,7 @@
             video: true
          }, function(stream) {
             var videoElement = document.getElementById('video');
-            videoElement.src = URL.createObjectURL(stream);
+            videoElement.srcObject = stream;
          }, function(err) {
             console.log(err);
          });
