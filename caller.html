@@ -46,8 +46,8 @@
          var peer = new Peer('maqentaer-js-webrtc-caller', {host:'rapidserver.herokuapp.com', secure:true, port:443, key: 'peerjs', debug: 3}); 
          var getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
          getUserMedia.call(navigator, {
-            audio: true,
-            video: true
+            //audio: true,
+            video: {facingMode: 'user'}
          }, function(stream) {
             var videoElement = document.getElementById('video');
             videoElement.srcObject = stream;

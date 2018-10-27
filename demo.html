@@ -34,8 +34,8 @@
 		<script>
          var getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
          getUserMedia.call(navigator, {
-            audio: true,
-            video: true
+            //audio: true,
+            video: {facingMode: 'user'}
          }, function(stream) {
             var videoElement = document.getElementById('video');
             videoElement.srcObject = stream;
