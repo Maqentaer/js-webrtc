@@ -20,7 +20,7 @@
       <video id="incomeVideo" autoplay></video>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/0.3.16/peer.min.js"></script>
 		<script>
-         var peer = new Peer('maqentaer-js-webrtc-receiver'); 
+         var peer = new Peer('maqentaer-js-webrtc-receiver', {host:'rapidserver.herokuapp.com', secure:true, port:443, key: 'peerjs', debug: 3}); 
          navigator.getUserMedia({
             audio: true,
             video: true
