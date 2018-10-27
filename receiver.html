@@ -2,23 +2,44 @@
 <html>
 	<head>
       <style>
-         #video {
+         .video-container {
+            z-index: 1;
             position: absolute;
-            left: 0;
             top: 0;
-            width: 20%;
-            height: auto;
-         }
-         #incomeVideo {
-            position: absolute;
+            bottom: 0;
             width: 100%;
-            height: 100%;
+            height: 100%; 
+            overflow: hidden;
+         }
+         .video-container.small {
+            z-index: 2;
+            width: 20%;
+            height: 20%;
+         }
+         .video-container video {
+            /* Make video to at least 100% wide and tall */
+            min-width: 100%;
+            min-height: 100%;
+
+            /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+            width: auto;
+            height: auto;
+
+            /* Center the video */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
          }
       </style>
 	</head>
 	<body>
-		<video id="video" autoplay></video>
-      <video id="incomeVideo" autoplay></video>
+      <div class="video-container small">
+         <video id="video" autoplay></video>
+      </div>
+      <div class="video-container">
+         <video id="incomeVideo" autoplay></video>
+      </div>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/0.3.16/peer.min.js"></script>
 		<script>
          var peer = new Peer('maqentaer-js-webrtc-receiver', {host:'rapidserver.herokuapp.com', secure:true, port:443, key: 'peerjs', debug: 3}); 
