@@ -11,8 +11,11 @@
             height: 100%; 
             overflow: hidden;
          }
-         .video-container.small {
+         .video-container-small {
             z-index: 2;
+            position: absolute;
+            top: 0;
+            bottom: 0;
             width: 20%;
             height: auto;
          }
@@ -34,9 +37,7 @@
       </style>
 	</head>
 	<body>
-      <div class="video-container small">
-         <video id="video" autoplay muted></video>
-      </div>
+      <video id="video" class="video-container-small" autoplay muted></video>
       <div class="video-container">
          <video id="incomeVideo" autoplay></video>
       </div>
